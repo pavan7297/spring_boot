@@ -1,8 +1,11 @@
 package com.ai.entity;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,23 +25,26 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID productId;
+    private String productId;
 
     private String productName;
 
-    @OneToOne
+
+    @OneToOne(cascade = CascadeType.ALL)
     private ProductDetails productDetails;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ProductRating productRateing;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ProductCategory productCategory;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ProductStore productStore;
 
+    @CreationTimestamp
     private LocalDateTime productCreatedAt;
 
+    @UpdateTimestamp
     private LocalDateTime productUpdatedAt;
 }

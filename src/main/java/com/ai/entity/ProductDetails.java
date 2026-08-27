@@ -25,7 +25,7 @@ public class ProductDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID productDetailId;
+    private String productDetailId;
 
     private String productImgUrl;
 

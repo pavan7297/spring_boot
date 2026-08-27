@@ -5,11 +5,12 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Generator {
 
-	
-	public StringBuilder randomGenerator() {
+	public String randomGenerator() {
 
 //		System.out.println("Hello, How Are You !");
 
@@ -37,12 +38,10 @@ public class Generator {
 
 			randomValues.append(randomValue);
 		}
-		
-		 
 
 //		System.out.println("Random value: " + randomValues);
-		
-		return randomValues;
+
+		return randomValues.toString();
 
 	}
 }

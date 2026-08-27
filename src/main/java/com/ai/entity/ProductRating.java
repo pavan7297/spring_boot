@@ -21,7 +21,7 @@ public class ProductRating {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID productRatingId;
+    private String productRatingId;
 
     private Double productRatingAvgRate;
 
